@@ -1,0 +1,117 @@
+/* --- Base (Mobile First) --- */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.gallery img {
+  flex-shrink: 1;
+  flex-grow: 1;
+  flex-basis: 90%;  /* flex-basis practice */
+}
+
+/* STUDENT CODE STARTS HERE */
+/* TABLET VIEW */
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: 45% 45%;
+    justify-items: center;
+  }
+
+  .grid div:nth-child(3n) {
+    grid-column: 1 / 3;
+    width: 50%;
+  }
+
+  .gallery {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .gallery img {
+    flex: 1 1 30%;
+  }
+
+  .grid div:nth-child(even) {
+    background-color: yellow;
+    /* unsure what "background highlight" is referring to */
+  }
+}
+
+/* DESKTOP VIEW */
+@media (min-width: 1200px) {
+  .grid {
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 25px;
+  }
+
+  .grid div:nth-child(3n) {
+    grid-column: 1 / 1;
+    width: auto;
+  }
+
+  .gallery {
+    justify-content: space-between;
+  }
+
+  .gallery img {
+    flex: 1 1 200px;
+  }
+
+  .grid div:hover {
+    box-shadow: 5px 5px 10px 2px black;
+  }
+
+  .grid div:nth-child(even) {
+    background-color: #f2f2f2;
+}
+}
+
+/* PRINT VIEW */
+@media print {
+  body {
+    background: white;
+    color: black;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .grid div {
+    border: 1px solid black;
+    page-break-inside: avoid;
+  }
+
+  .gallery {
+    display: none;
+  }
+
+}
+
+/* USER PREFERENCES */
+@media (prefers-reduced-motion: reduce) {
+  .grid div, .grid div:hover, .gallery img {
+    animation: none;
+    transition: none;
+    transform: none;
+    box-shadow: none;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background: black;
+    color: white;
+  }
+}
+
+/* THINGS TO CHECK
+- how to check user preferences
+- the "indent" at the third character card
