@@ -107,11 +107,15 @@
 
 @media (prefers-color-scheme: dark) {
   body {
-    background: black;
-    color: white;
+    background: #111;
+    color: #eee;
+  }
+  .grid div {
+    background: #111;
+    border: 1px solid #EB5B00
   }
 }
 
 /* THINGS TO CHECK
-- how to check user preferences
 - the "indent" at the third character card
+- background highlight meaning.
