@@ -97,7 +97,7 @@
 
 /* USER PREFERENCES */
 @media (prefers-reduced-motion: reduce) {
-  .grid div, .grid div:hover, .gallery img {
+  .grid div:hover, .gallery img:hover {
     animation: none;
     transition: none;
     transform: none;
