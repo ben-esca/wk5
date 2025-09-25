@@ -1,0 +1,73 @@
+/* --- Base (Mobile First) --- */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.gallery img {
+  flex-shrink: 1;
+  flex-grow: 1;
+  flex-basis: 90%;  /* flex-basis practice */
+}
+
+/* STUDENT CODE STARTS HERE */
+/* TABLET VIEW */
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: 45% 45%;
+    justify-items: center;
+  }
+
+  /* .grid div:nth-child(3n) {
+    grid-column: 1 / 3;
+  } */
+  /* I DONT KNOW HOW TO DO THE PATTERN */
+
+  .gallery {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .gallery img {
+    flex: 1 1 30%;
+  }
+
+  .grid div:nth-child(even) {
+    background-color: yellow;
+  }
+}
+
+/* DESKTOP VIEW */
+@media (min-width: 1200px) {
+  .grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+  }
+
+  .gallery {
+    justify-content: space-between;
+  }
+
+  .gallery img {
+    flex: 1 1 200px;
+  }
+
+  /* .grid div:hover {
+    SHADOW
+  } */
+}
+
+/* PRINT VIEW */
+@media print {
+  background-color: white;
+  color: black;
+}
+
+
+/* USER PREFERENCES */
